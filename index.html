@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Addition Game</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="game-card" aria-labelledby="game-title">
+    <section class="hero">
+      <span class="mascot" aria-hidden="true">🦊</span>
+      <div>
+        <p class="eyebrow">Math practice for kids</p>
+        <h1 id="game-title">Happy Addition Game</h1>
+        <p class="subtitle">Add the two numbers, type your answer, and collect stars!</p>
+      </div>
+    </section>
+
+    <section class="score-row" aria-label="Game score">
+      <div class="score-pill">
+        <span aria-hidden="true">⭐</span>
+        <span>Stars: <strong id="score">0</strong></span>
+      </div>
+      <button id="new-question" class="secondary-button" type="button">New Question</button>
+    </section>
+
+    <form id="answer-form" class="question-box">
+      <p class="instruction">What is the answer?</p>
+      <div class="problem" aria-live="polite">
+        <span id="first-number">0</span>
+        <span aria-label="plus">+</span>
+        <span id="second-number">0</span>
+        <span aria-label="equals">=</span>
+        <label class="visually-hidden" for="answer-input">Your answer</label>
+        <input
+          id="answer-input"
+          class="answer-input"
+          type="number"
+          inputmode="numeric"
+          min="0"
+          max="20"
+          autocomplete="off"
+          required
+        />
+      </div>
+      <button class="submit-button" type="submit">Submit Answer</button>
+    </form>
+
+    <p id="feedback" class="feedback" aria-live="assertive">Ready? Try your first one!</p>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
