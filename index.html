@@ -3,51 +3,56 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Happy Addition Game</title>
+  <title>Vowel Explorer Game</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <main class="game-card" aria-labelledby="game-title">
     <section class="hero">
-      <span class="mascot" aria-hidden="true">🦊</span>
+      <span class="mascot" aria-hidden="true">🦉</span>
       <div>
-        <p class="eyebrow">Math practice for kids</p>
-        <h1 id="game-title">Happy Addition Game</h1>
-        <p class="subtitle">Add the two numbers, type your answer, and collect stars!</p>
+        <p class="eyebrow">Reading practice for kids</p>
+        <h1 id="game-title">Vowel Explorer</h1>
+        <p class="subtitle">Read the word, listen for the vowel sound, then pick long or short!</p>
       </div>
     </section>
 
     <section class="score-row" aria-label="Game score">
-      <div class="score-pill">
+      <div class="score-pill correct-score">
         <span aria-hidden="true">⭐</span>
-        <span>Stars: <strong id="score">0</strong></span>
+        <span>Correct: <strong id="correct-count">0</strong></span>
       </div>
-      <button id="new-question" class="secondary-button" type="button">New Question</button>
+      <div class="score-pill wrong-score">
+        <span aria-hidden="true">💡</span>
+        <span>Keep Trying: <strong id="wrong-count">0</strong></span>
+      </div>
+      <button id="new-word" class="secondary-button" type="button">New Word</button>
+    </section>
+
+    <section class="lesson-card" aria-label="Vowel helper">
+      <p><strong>Helpful hint:</strong> A <span class="long-vowel">long vowel</span> says its name, like <em>cake</em>. A <span class="short-vowel">short vowel</span> has a quick sound, like <em>cat</em>.</p>
     </section>
 
     <form id="answer-form" class="question-box">
-      <p class="instruction">What is the answer?</p>
-      <div class="problem" aria-live="polite">
-        <span id="first-number">0</span>
-        <span aria-label="plus">+</span>
-        <span id="second-number">0</span>
-        <span aria-label="equals">=</span>
-        <label class="visually-hidden" for="answer-input">Your answer</label>
-        <input
-          id="answer-input"
-          class="answer-input"
-          type="number"
-          inputmode="numeric"
-          min="0"
-          max="20"
-          autocomplete="off"
-          required
-        />
+      <p class="instruction">What kind of vowel sound do you hear?</p>
+      <div class="word-card" aria-live="polite">
+        <span id="current-word">cake</span>
       </div>
-      <button class="submit-button" type="submit">Submit Answer</button>
+      <p id="word-clue" class="word-clue">Look at the highlighted vowel pattern!</p>
+
+      <div class="choice-grid" role="radiogroup" aria-label="Choose long or short vowel">
+        <button id="long-choice" class="choice-button long" type="submit" value="long">
+          <span aria-hidden="true">🦒</span>
+          Long Vowel
+        </button>
+        <button id="short-choice" class="choice-button short" type="submit" value="short">
+          <span aria-hidden="true">🐢</span>
+          Short Vowel
+        </button>
+      </div>
     </form>
 
-    <p id="feedback" class="feedback" aria-live="assertive">Ready? Try your first one!</p>
+    <p id="feedback" class="feedback" aria-live="assertive">Ready, word explorer? Try your first one!</p>
   </main>
 
   <script src="script.js"></script>
