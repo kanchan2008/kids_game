@@ -1,12 +1,13 @@
-# Happy Addition Game
+# Vowel Explorer Game
 
-A small, kid-friendly addition game that runs as a static website and is ready for GitHub Pages.
+A small, kid-friendly reading game that runs as a static website and is ready for GitHub Pages.
 
 ## How it works
 
-- The game shows two random numbers from 0 to 10.
-- Kids type the addition answer in the answer box.
-- The Submit Answer button checks the answer, gives friendly feedback, updates the star score for correct answers, and immediately shows the next random problem.
+- The game shows one random word at a time.
+- Kids decide whether the word has a long vowel sound or a short vowel sound.
+- Clicking **Long Vowel** or **Short Vowel** submits the answer immediately.
+- The game validates the answer, shows friendly correct/wrong feedback, updates the correct and wrong counters, and automatically moves to the next random word.
 
 ## Deploy on GitHub Pages
 
