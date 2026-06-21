@@ -3,59 +3,51 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tick Tock Time Game</title>
+  <title>Happy Addition Game</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <main class="game-card" aria-labelledby="game-title">
     <section class="hero">
-      <span class="mascot" aria-hidden="true">TIME</span>
+      <span class="mascot" aria-hidden="true">🦊</span>
       <div>
-        <p class="eyebrow">Time practice for kids</p>
-        <h1 id="game-title">Tick Tock Time Game</h1>
-        <p class="subtitle">Read the analog clock, pick the matching time, and collect happy points!</p>
+        <p class="eyebrow">Math practice for kids</p>
+        <h1 id="game-title">Happy Addition Game</h1>
+        <p class="subtitle">Add the two numbers, type your answer, and collect stars!</p>
       </div>
     </section>
 
     <section class="score-row" aria-label="Game score">
-      <div class="score-pill correct-score">
-        <span aria-hidden="true">Star</span>
-        <span>Correct: <strong id="correct-count">0</strong></span>
+      <div class="score-pill">
+        <span aria-hidden="true">⭐</span>
+        <span>Stars: <strong id="score">0</strong></span>
       </div>
-      <div class="score-pill wrong-score">
-        <span aria-hidden="true">Oops</span>
-        <span>Try Again: <strong id="wrong-count">0</strong></span>
-      </div>
-      <button id="new-question" class="secondary-button" type="button">New Clock</button>
+      <button id="new-question" class="secondary-button" type="button">New Question</button>
     </section>
 
-    <section class="question-box" aria-label="Clock question">
-      <p class="instruction">What time does the clock show?</p>
-
-      <div class="clock-wrap" aria-live="polite">
-        <div class="clock" role="img" aria-label="Analog clock showing a random time">
-          <span class="number number-12">12</span>
-          <span class="number number-1">1</span>
-          <span class="number number-2">2</span>
-          <span class="number number-3">3</span>
-          <span class="number number-4">4</span>
-          <span class="number number-5">5</span>
-          <span class="number number-6">6</span>
-          <span class="number number-7">7</span>
-          <span class="number number-8">8</span>
-          <span class="number number-9">9</span>
-          <span class="number number-10">10</span>
-          <span class="number number-11">11</span>
-          <span id="hour-hand" class="hand hour-hand"></span>
-          <span id="minute-hand" class="hand minute-hand"></span>
-          <span class="center-dot"></span>
-        </div>
+    <form id="answer-form" class="question-box">
+      <p class="instruction">What is the answer?</p>
+      <div class="problem" aria-live="polite">
+        <span id="first-number">0</span>
+        <span aria-label="plus">+</span>
+        <span id="second-number">0</span>
+        <span aria-label="equals">=</span>
+        <label class="visually-hidden" for="answer-input">Your answer</label>
+        <input
+          id="answer-input"
+          class="answer-input"
+          type="number"
+          inputmode="numeric"
+          min="0"
+          max="20"
+          autocomplete="off"
+          required
+        />
       </div>
+      <button class="submit-button" type="submit">Submit Answer</button>
+    </form>
 
-      <div id="choices" class="choices" aria-label="Answer choices"></div>
-    </section>
-
-    <p id="feedback" class="feedback" aria-live="assertive">Ready? Pick the time you see!</p>
+    <p id="feedback" class="feedback" aria-live="assertive">Ready? Try your first one!</p>
   </main>
 
   <script src="script.js"></script>
